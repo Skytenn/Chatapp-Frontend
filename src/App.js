@@ -10,7 +10,6 @@ const socket = io(process.env.REACT_APP_SERVER_URL, {
 function App() {
   const [username, setUsername] = useState("");
   const [showChat, setShowChat] = useState(false);
-  const [room, setRoom] = useState("");
   const [usersCount, setUsersCount] = useState(0);
 
   useEffect(() => {
@@ -19,10 +18,10 @@ function App() {
       console.log("Disconnected from server!");
       setUsersCount(0);
     });
+    
     socket.on("room_joined", (data) => {
-      setRoom(data.room);
-      setUsersCount(data.usersCount);
       setShowChat(true);
+      setUsersCount(data.usersCount);
     });
 
     // Хэрэглэгчдийн тоо шинэчлэгдэх үед
@@ -50,7 +49,8 @@ function App() {
     <div className="App">
       {!showChat ? (
         <div className="joinChatContainer">
-          <h3>Чат</h3>
+          <h3>Чат 💌</h3>
+          <p>Онлайн хэрэглэгч: {usersCount}</p>
           <input
             type="text"
             placeholder="Нэрээ оруулна уу..."
@@ -63,10 +63,7 @@ function App() {
         <Chat
           socket={socket}
           username={username}
-          room={room}
-          setRoom={setRoom}
           usersCount={usersCount}
-          setUsersCount={setUsersCount}
         />
       )}
       <footer className="footer">
