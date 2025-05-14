@@ -6,8 +6,13 @@
     "@vercel/speed-insights": "^1.1.0",
     "cra-template": "1.2.0",
     "express": "^4.21.2",
+<<<<<<< HEAD
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+=======
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+>>>>>>> e31b93f8274fd56a804af7ace0494408f5e45063
     "react-scripts": "^5.0.1",
     "react-scroll-to-bottom": "^4.2.0",
     "render": "^0.1.4",
@@ -16,7 +21,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+<<<<<<< HEAD
     "start": "set PORT=10000 && react-scripts start",
+=======
+    "start": "PORT=10000 react-scripts start",
+>>>>>>> e31b93f8274fd56a804af7ace0494408f5e45063
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
