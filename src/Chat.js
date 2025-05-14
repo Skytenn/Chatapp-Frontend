@@ -19,7 +19,6 @@ function Chat({ socket, username, room, setRoom, usersCount, setUsersCount }) {
     };
   }, [socket]);
 
-<<<<<<< HEAD
   // Өрөөний түүх (room_history) эвэнтийг хүлээж авах
   useEffect(() => {
     const handleRoomHistory = (history) => {
@@ -31,8 +30,6 @@ function Chat({ socket, username, room, setRoom, usersCount, setUsersCount }) {
     };
   }, [socket]);
 
-=======
->>>>>>> e31b93f8274fd56a804af7ace0494408f5e45063
   // Мессеж илгээх логик
   const sendMessage = () => {
     if (currentMessage.trim() === "") return;
@@ -48,27 +45,11 @@ function Chat({ socket, username, room, setRoom, usersCount, setUsersCount }) {
     setCurrentMessage(""); // Input-ыг хоослох
   };
 
-<<<<<<< HEAD
-
-=======
-  // Өрөө солих логик
-  const handleChangeRoom = () => {
-    setMessageList([]);
-    socket.emit("leave_room", room);
-    socket.emit("join_room");
-  };
->>>>>>> e31b93f8274fd56a804af7ace0494408f5e45063
-
   return (
     <div className="chat-window">
       <div className="chat-header">
         <p>
-<<<<<<< HEAD
            Чат<span style={{ marginLeft: '10px' }}>Онлайн: {usersCount}</span>
-=======
-          Чат 💓<span style={{ marginLeft: '10px' }}>{usersCount}</span>
-          <button onClick={handleChangeRoom}>Өрөө Солих</button>
->>>>>>> e31b93f8274fd56a804af7ace0494408f5e45063
         </p>
       </div>
       <div className="chat-body">
